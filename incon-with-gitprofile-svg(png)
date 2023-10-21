@@ -1,0 +1,10 @@
+//Currently, the program uses SVGs as the rank icon but GitHub only provides PNGs for a users profile picture.
+//One solution could be to convert the function to return a png instead, requiring the other options to first convert their SVGs.
+
+ // thanks for your feature request. Including pngs inside svgs is possible:
+
+<svg>
+  <image href="https://avatars.githubusercontent.com/u/17570430?v=4" x="0" y="0" width="100" height="100" />
+  
+</svg>
+  
