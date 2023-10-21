@@ -1,0 +1,42 @@
+
+   // It will be better to stay a bit loose than this strict req.query checking. 
+//Right now even if people add an extraneous query or do a simple mistake this will throw error for the whole card.
+//Not to mention it might also have a negative side effect - Imagine later down the line we remove or deprecate a query param, 
+//now people might not update the URL even if the query param is deprecated but this code will throw error and users will have no idea why it's failing.
+
+//Instead it will be better if we don't throw instead if a query param is malformed we just ditch that param's value or default it to something sensible.
+
+//Eg for the count_weight if its NaN we just disregard it.
+
+
+     "hide",
+    "hide_title",
+    "hide_border",
+    "card_width",
+    "title_color",
+    "text_color",
+    "bg_color",
+    "theme",
+    "cache_seconds",
+    "layout",
+    "langs_count",
+    "exclude_repo",
+    "size_weight",
+    "count_weight",
+    "custom_title",
+    "locale",
+    "border_radius",
+    "border_color",
+    "disable_animations",
+    "hide_progress",
+  ];
+
+  for (let [_, value] of Object.entries(req.query)) {
+
+
+for (let [_, value] of Object.entries(req.query)) {
+    queriesName.map((name) => {
+      if (value.toString().includes(name))
+        return res.send(renderError("Something went wrong", "Invalid query"));
+    });
+  }
